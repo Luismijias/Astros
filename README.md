@@ -2,7 +2,7 @@
 
 # ASTROS
 
-A ready to use solution for content management and multilingual websites using [Netuno](https://www.netuno.org/), [ReactJS](https://reactjs.org/) and [Ant Design](https://ant.design/).
+A ready to use solution for content management and multilingual websites using [Netuno](https://www.netuno.org/), [ReactJS](https://reactjs.org/),[Less](https://www.lesscss.org/) and [Ant Design](https://ant.design/).
 
 ## Requirement
 
