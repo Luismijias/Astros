@@ -44,9 +44,9 @@ Then execute the command below inside the `website` folder:
 ### Clone and Setup
 
 Using SSH:
-inside the neptune/apps paste this comand:
+inside the netuno/apps paste this comand:
 
-git clone git@github.com:Luismijias/Astros.git
+`git clone git@github.com:Luismijias/Astros.git`
 
 ### Running
 
