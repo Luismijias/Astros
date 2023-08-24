@@ -1,0 +1,42 @@
+{
+  "name": "cluar",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@animated-burgers/burger-slip": "^1.1.2",
+    "@netuno/service-client": "^1.2.0",
+    "@ant-design/icons": "^5.2.4",
+    "antd": "^5.5.2",
+    "classnames": "^2.3.2",
+    "prop-types": "^15.8.1",
+    "less": "4.1.3",
+    "react-ga": "^3.3.1",
+    "react-google-recaptcha": "^2.1.0",
+    "react-icons": "^4.7.1",
+    "react-map-gl": "^7.0.20",
+    "react-router-dom": "^6.4.4",
+    "react-scroll-parallax": "^3.3.2",
+    "sal.js": "^0.8.5",
+    "sprintf-js": "^1.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "vite": "^4.3.9",
+    "vite-plugin-imp": "^2.4.0"
+  }
+}
