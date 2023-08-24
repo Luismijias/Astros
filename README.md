@@ -1,6 +1,4 @@
-https://imgur.com/a/IdJtZjS
-
-![Logo](https://raw.githubusercontent.com/netuno-org/cluar/main/docs/logo.svg](https://imgur.com/a/IdJtZjS)
+![Logo](https://imgur.com/a/IdJtZjS)
 
 # CLUAR CMS
 
