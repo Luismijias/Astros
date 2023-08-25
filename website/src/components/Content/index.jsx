@@ -2,6 +2,8 @@ import React from 'react';
 import { Row, Col } from 'antd';
 
 import Actions from '../Actions';
+import Orbit1 from '../Animations/Orbit1';
+import Orbit2 from '../Animations/Orbit2'; 
 
 import './index.less';
 
@@ -107,7 +109,7 @@ function Content({section, type, title, content, image, image_title, image_alt, 
     <section className="content">
       { layout }
       <Actions { ... { section, type, actions } } />
-    </section>
+      </section>
   );
 }
 

@@ -1,11 +1,9 @@
 import React from "react";
+import "./index.less";
 
 function Orbit1() {
   return (
-    <svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="400" cy="400" r="5" fill="white" />
-      <circle cx="200" cy="200" r="3" fill="white" />
-
+    <svg className="orbit2-svg" xmlns="http://www.w3.org/2000/svg">
       <circle cx="100" cy="200" r="5" fill="white">
         <animateTransform
           attributeName="transform"
@@ -26,6 +24,18 @@ function Orbit1() {
           from="360 400 400"
           to="0 400 400"
           dur="10s"
+          repeatCount="indefinite"
+        />
+      </circle>
+
+      <circle cx="300" cy="400" r="12" fill="white">
+        <animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          type="rotate"
+          from="360 400 400"
+          to="0 400 400"
+          dur="15s"
           repeatCount="indefinite"
         />
       </circle>

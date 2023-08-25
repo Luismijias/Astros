@@ -14,10 +14,8 @@ import BaseCookies from './base/Cookies';
 import BaseHeader from './base/Header';
 import BaseFooter from './base/Footer';
 import NotFound from './pages/NotFound';
-import Orbit1 from './components/Animations/Orbit1';
 
 import './styles/App.less';
-import Orbit2 from './components/Animations/Orbit2';
 
 const { Content } = Layout;
 
@@ -77,8 +75,6 @@ function App() {
                 <Route element={<NotFound />} />
               </Routes>
             </Content>
-           <Orbit1/>
-           <Orbit2/>
             <BaseFooter />
             <BaseCookies />
           </Layout>
