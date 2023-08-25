@@ -21,18 +21,24 @@ function Banner({ section, type, image, image_title, image_alt, title, content, 
           <Col lg={18} sm={24}>
             <div>
               <h1 data-sal="slide-down" data-sal-duration="2000" data-sal-easing="ease-out-cubic">{title}</h1>
-              <div data-sal="fade" data-sal-duration="2000" data-sal-easing="ease-out-cubic" dangerouslySetInnerHTML={{ __html: content }}></div>
+              <div data-sal="slide-down" data-sal-duration="2000" data-sal-easing="ease-out-cubic" className="banner__wrapper__content"  dangerouslySetInnerHTML={{ __html: content }}></div>
             </div>
-          </Col>
+            <div>
+              <h1 data-sal="slide-down" data-sal-duration="2000" data-sal-easing="ease-out-cubic">{title}</h1>
+              <div data-sal="slide-down" data-sal-duration="2000" data-sal-easing="ease-out-cubic" className="banner__wrapper__content"  dangerouslySetInnerHTML={{ __html: content }}></div>
+            </div>
+          </Col>            
           <Col lg={6} sm={24}>
             <Actions {... { section, type, actions }} />
           </Col>
-        </Row>
+        </Row>    
         <div className="banner__sub-banner">
           {Cluar.plainDictionary('text-sub-banner')}
         </div>
         <div className="banner__darken-bg"></div>
       </div>
+    
+
     </section>
   );
 }
