@@ -13,7 +13,7 @@ HERE YOUR CUSTOM CSS
 }
 
 .dev .top-nav > li > a:hover, .dev .top-nav > li > a:focus, .dev .top-nav > li.active > a, .dev .top-nav > .open > a, .dev .top-nav > .open > a:hover, .dev .top-nav > .open > a:focus {
-    background-color: #1178FF;
+    background-color: rgb(240, 212, 135);
     color: #ffffff;
 }
 
@@ -27,7 +27,7 @@ HERE YOUR CUSTOM CSS
 }
 
 .btn-primary {
-	background-color: #1178FF;
+	background-color: rgb(240, 212, 135);
 	border-color: transparent;
 }
 
@@ -50,7 +50,7 @@ HERE YOUR CUSTOM CSS
 }
 
 .btn-link {
-    color: #1178FF;
+    color: rgb(240, 212, 135);
 }
 
 .btn-link:focus, .btn-link:hover {
@@ -58,42 +58,42 @@ HERE YOUR CUSTOM CSS
 }
 
 .text-primary {
-    color: #1178FF;
+    color: rgb(240, 212, 135);
 }
 
 .badge-warning {
-    background-color: #1178FF;
+    background-color: rgb(240, 212, 135);
 }
 
 .select2-container--bootstrap .select2-dropdown,
 .select2-container--bootstrap.select2-container--focus .select2-selection,
 .select2-container--bootstrap.select2-container--open .select2-selection {
-    border-color: #1178FF;
+    border-color: rgb(240, 212, 135);
     box-shadow: none;
     -webkit-box-shadow: none;
 }
 
 .select2-container--bootstrap .select2-results__option--highlighted[aria-selected] {
-    background-color: #1178FF;
+    background-color: rgb(240, 212, 135);
 }
 
 .form-control:focus {
-    border-color: #1178FF;
+    border-color: rgb(240, 212, 135);
     box-shadow: none;
     -webkit-box-shadow: none;
 }
 
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary, 
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
-    background: #1178FF !important;
+    background: rgb(240, 212, 135) !important;
 }
 
 .datepicker table tr td.active.active, .datepicker table tr td.active.highlighted.active, .datepicker table tr td.active.highlighted:active, .datepicker table tr td.active:active {
-    background: #1178FF;
+    background: rgb(240, 212, 135);
 }
 
 .clockpicker-canvas line {
-    stroke: #1178FF !important;
+    stroke: rgb(240, 212, 135) !important;
 }
 
 .clockpicker-canvas-bg-trans, .clockpicker-canvas-bg {
@@ -101,7 +101,7 @@ HERE YOUR CUSTOM CSS
 }
 
 .clockpicker-canvas-bearing, .clockpicker-canvas-fg {
-    fill: #1178FF !important;
+    fill: rgb(240, 212, 135) !important;
 }
 
 .clockpicker-tick.active,
@@ -112,11 +112,11 @@ HERE YOUR CUSTOM CSS
 
 .search-content .btn-search,
 .search-content .btn-filter {
-    background: #1178FF !important;
+    background: rgb(240, 212, 135) !important;
 }
 
 .pagination>li>a, .pagination>li>span {
-	color: #1178FF !important;
+	color: rgb(240, 212, 135) !important;
 }
 
 .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
