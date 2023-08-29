@@ -1,45 +1,51 @@
-const name = _req.getValues('filtro', _val.map()).getString('name')
-const pageNumber = _req.getValues('pagina', _val.map()).getInt('numero', 1)
-const PAGE_SIZE = 2
-const SELECT = 'uid, name, radius, rotation, tipo'
-const QUERY_PAGE = `LIMIT ${PAGE_SIZE} OFFSET ${pageNumber <= 1 ? 0 : PAGE_SIZE * pageNumber}`
+const nome = _req.getValues('filtro', _val.map()).getString('nome');
+const numeroPagina = _req.getValues('pagina', _val.map()).getInt('numero', 1);
+const PAGE_SIZE = 5;
+const offset = (numeroPagina - 1) * PAGE_SIZE;
 
-let dbAstros = null;
+let dbCelestes = null;
 
-if (name != '') {
-    dbAstros = _db.query(`
-        SELECT ${SELECT}
+if (nome !== '') {
+    dbCelestes = _db.query(`
+        SELECT uid, name AS nome, radius AS raio, rotation AS rotacao,
+            CASE 
+                WHEN tipo = 'star' THEN 'estrela'
+                WHEN tipo = 'planet' THEN 'planeta'
+                WHEN tipo = 'satellite' THEN 'satélite'
+            END AS tipo
         FROM (
-            SELECT uid, name AS nome, radius AS raio, rotation AS rotacao, 'star' AS tipo
+            SELECT uid, name, radius, rotation, 'star' AS tipo
             FROM star
             UNION ALL
-            SELECT uid, name AS nome, radius AS raio, rotation AS rotacao, 'satellite' AS tipo
+            SELECT uid, name, radius, rotation, 'satellite' AS tipo
             FROM satellite
             UNION ALL
-            SELECT uid, name AS nome, radius AS raio, rotation AS rotacao, 'planet' AS tipo
+            SELECT uid, name, radius, rotation, 'planet' AS tipo
             FROM planet
-            ) AS astros
-            WHERE lower(name) LIKE lower(?)
-         ${QUERY_PAGE}
-        ` , `%${name}%`);
+        ) AS Celestial
+        WHERE lower(name) LIKE lower(?)
+        LIMIT ${PAGE_SIZE} OFFSET ${offset}
+    `, `%${nome}%`);
 } else {
-    dbAstros = _db.query(`
-        SELECT ${SELECT}
+    dbCelestes = _db.query(`
+        SELECT uid, name AS nome, radius AS raio, rotation AS rotacao,
+            CASE 
+                WHEN tipo = 'star' THEN 'estrela'
+                WHEN tipo = 'planet' THEN 'planeta'
+                WHEN tipo = 'satellite' THEN 'satélite'
+            END AS tipo
         FROM (
-            SELECT uid, name AS nome, radius AS raio, rotation AS rotacao, 'star' AS tipo
+            SELECT uid, name, radius, rotation, 'star' AS tipo
             FROM star
             UNION ALL
-            SELECT uid, name AS nome, radius AS raio, rotation AS rotacao, 'satellite' AS tipo
+            SELECT uid, name, radius, rotation, 'satellite' AS tipo
             FROM satellite
             UNION ALL
-            SELECT uid, name AS nome, radius AS raio, rotation AS rotacao, 'planet' AS tipo
+            SELECT uid, name, radius, rotation, 'planet' AS tipo
             FROM planet
-        ) AS astro
-        ${QUERY_PAGE}
-        `);
+        ) AS Celestial
+        LIMIT ${PAGE_SIZE} OFFSET ${offset}
+    `);
 }
 
-_out.json(dbAstros);
-
-
-
+_out.json({ data: dbCelestes });

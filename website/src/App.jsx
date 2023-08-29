@@ -14,7 +14,7 @@ import BaseCookies from './base/Cookies';
 import BaseHeader from './base/Header';
 import BaseFooter from './base/Footer';
 import NotFound from './pages/NotFound';
-import CelestialBodys from './pages/CelestialBodys';
+import CelestialBody from './pages/CelestialBody';
 import Satellite from './pages/Satellite';
 import Planet from './pages/Planet';
 import Star from './pages/Star';
@@ -77,7 +77,7 @@ function App() {
             <Content>
               <Routes>
                 <Route path="/" exact element={<Navigate to={`/${Cluar.currentLanguage().locale}/`} />} />
-                <Route path="/pt/celestial-bodys/" exact element={<CelestialBodys />} />
+                <Route path="/pt/celestial-body/" exact element={<CelestialBody />} />
                 <Route path="/pt/star/" exact element={<Star />} />
                 <Route path="/pt/planet/" exact element={<Planet />} />
                 <Route path="/pt/satellite/" exact element={<Satellite />} />

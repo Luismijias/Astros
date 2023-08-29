@@ -37,10 +37,11 @@
     .logo {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: left;
         width: @logo-width;
         height: auto;
-
+        
+        
         a {
             display: flex;
             align-items: center;
@@ -48,6 +49,7 @@
             img {
                 width: auto;
                 height: 50px;
+                border: 2px solid @primary-color;
             }
         }
 
@@ -70,9 +72,11 @@
         border-bottom: none;
         display: flex;
         width: 150px !important;
-
+        padding-left: 90px;
+              
         .ant-menu-submenu-title:hover {
             color: @header-menu-color-hover !important;
+            
         }
 
         li {
@@ -88,7 +92,7 @@
     .menu {
         width: 100%;
         line-height: @header-line-height !important;
-
+               
         @media only screen and (max-width: @header-mobile-width) {
             display: none;
         }
@@ -122,8 +126,10 @@
                 }
 
                 a {
+                    font-weight: bold;
                     color: @header-menu-color;
-                    font-size: 1em;
+                    font-size: 1.2em;
+                    
                 }
             }
         }
@@ -137,7 +143,7 @@
             }
         }
     }
-
+ 
     .menu-burger-button {
         position: absolute;
         width: auto;
@@ -171,6 +177,7 @@
 .ant-menu-sub,
 .ant-menu-submenu-popup {
     border-radius: 2px !important;
+    
 }
 
 .header-burger-open {

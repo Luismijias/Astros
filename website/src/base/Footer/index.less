@@ -19,8 +19,12 @@
     
     .logo {
         img {
+            margin-top: 70px;
             width: 100%;
             max-width: 200px;
+            opacity : 0.15; 
+            justify-content: left;
+            border: solid 2px @primary-color;
         }
     }
 
@@ -122,9 +126,15 @@
 
         &__social-links {
             padding-top: 10px;
-            >a {
+            display: flex;
+            justify-content: flex-end;
+            
+            >a {               
                 color: @primary-color;
-                margin-right: 10px;
+                margin-left: 10px;
+                >svg {
+                    width: 30px;
+                }
             }
         }
     }
