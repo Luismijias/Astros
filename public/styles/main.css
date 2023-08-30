@@ -18,12 +18,12 @@ HERE YOUR CUSTOM CSS
 }
 
 .top-nav > li.active > a {
-	background-color: #FF8116;
+	background-color: #F0D487;
     color: #202020;
 }
 
 .dropdown button {
-    color: #FF8116;
+    color: black;
 }
 
 .btn-primary {
@@ -46,7 +46,7 @@ HERE YOUR CUSTOM CSS
 
 .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
     background-color: #5b5ce1;
-    border-color: #FF8116;
+    border-color: #F0D487;
 }
 
 .btn-link {

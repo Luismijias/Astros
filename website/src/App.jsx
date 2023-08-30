@@ -18,8 +18,10 @@ import CelestialBody from './pages/CelestialBody';
 import Satellite from './pages/Satellite';
 import Planet from './pages/Planet';
 import Star from './pages/Star';
+import Detail from './pages/Detail';
 
 import './styles/App.less';
+
 
 
 
@@ -78,6 +80,7 @@ function App() {
               <Routes>
                 <Route path="/" exact element={<Navigate to={`/${Cluar.currentLanguage().locale}/`} />} />
                 <Route path="/pt/celestial-body/" exact element={<CelestialBody />} />
+                <Route path="/pt/detail/" exact element={<Detail />} />
                 <Route path="/pt/star/" exact element={<Star />} />
                 <Route path="/pt/planet/" exact element={<Planet />} />
                 <Route path="/pt/satellite/" exact element={<Satellite />} />

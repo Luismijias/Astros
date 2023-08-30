@@ -16,7 +16,7 @@ FROM (
     UNION ALL
     SELECT uid, name AS nome, radius AS raio, rotation as rotacao, 'planet' AS tipo
     FROM planet
-) AS astros
+) AS celestial
 WHERE uid = ?::uuid;
 `, uid);
 
