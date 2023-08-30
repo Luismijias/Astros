@@ -11,27 +11,43 @@ let dbSatellites = null;
 
 if (nome != '') {
     dbSatellites = _db.query(`
-        SELECT uid, nome, rotacao, raio, tipo,
-            CASE 
-                WHEN tipo = 'satellite' THEN 'satélite'
-            END AS tipo       
-        FROM (
-            SELECT uid, name AS nome, radius AS raio, rotation AS rotacao, 'satellite' AS tipo
-            FROM satellite
-        ) AS Satellite
+SELECT 
+    satellite.uid,
+    satellite.nome AS nome,
+    satellite.raio AS raio,
+    satellite.rotacao AS rotacao,
+    planet.name AS planeta_mae
+FROM (
+    SELECT 
+        uid,
+        name AS nome,
+        radius AS raio,
+        rotation AS rotacao,
+        planet_id AS planeta_mae
+    FROM satellite
+) AS satellite
+LEFT JOIN planet ON satellite.planeta_mae = planet.id
         WHERE lower(nome) LIKE lower(?)
          ${QUERY_PAGE}
     `, `%${nome}%`)
 } else {
     dbSatellites = _db.query(`
-    SELECT uid, nome, rotacao, raio, tipo, 
-        CASE 
-            WHEN tipo = 'satellite' THEN 'satélite'
-        END AS tipo      
-    FROM (
-        SELECT uid, name AS nome, radius AS raio, rotation AS rotacao, 'satellite' AS tipo
-        FROM satellite
-    ) AS Satellite
+SELECT 
+    satellite.uid,
+    satellite.nome AS nome,
+    satellite.raio AS raio,
+    satellite.rotacao AS rotacao,
+    planet.name AS planeta_mae
+FROM (
+    SELECT 
+        uid,
+        name AS nome,
+        radius AS raio,
+        rotation AS rotacao,
+        planet_id AS planeta_mae
+    FROM satellite
+) AS satellite
+LEFT JOIN planet ON satellite.planeta_mae = planet.id
     ${QUERY_PAGE}
     `);
 }

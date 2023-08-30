@@ -30,6 +30,8 @@ function PlanetTable() {
             <th>Nome</th>
             <th>Raio</th>
             <th>Rotação</th>
+            <th>Estrela Mãe</th>
+            <th>UID</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +40,8 @@ function PlanetTable() {
               <td>{item.nome}</td>
               <td>{item.raio}</td>
               <td>{item.rotacao}</td>
+              <td>{item.estrela_mae}</td>
+              <td>{item.uid}</td>
             </tr>
           ))}
         </tbody>

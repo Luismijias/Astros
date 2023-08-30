@@ -30,6 +30,8 @@ function SatelliteTable() {
             <th>Nome</th>
             <th>Raio</th>
             <th>Rotação</th>
+            <th>Planeta Mãe</th>
+            <th>UID</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +40,8 @@ function SatelliteTable() {
               <td>{item.nome}</td>
               <td>{item.raio}</td>
               <td>{item.rotacao}</td>
+              <td>{item.planeta_mae}</td>
+              <td>{item.uid}</td>
             </tr>
           ))}
         </tbody>

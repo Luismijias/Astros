@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./index.less";
 import _service from "@netuno/service-client";
 import { Button } from "antd";
+
+import "./index.less";
 
 function StarTable() {
   const [dados, setDados] = useState([]);
@@ -30,6 +31,7 @@ function StarTable() {
             <th>Nome</th>
             <th>Raio</th>
             <th>Rotação</th>
+            <th>uid</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +40,7 @@ function StarTable() {
               <td>{item.nome}</td>
               <td>{item.raio}</td>
               <td>{item.rotacao}</td>
+              <td>{item.uid}</td>
             </tr>
           ))}
         </tbody>
