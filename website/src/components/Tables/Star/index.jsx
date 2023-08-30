@@ -3,14 +3,14 @@ import "./index.less";
 import _service from "@netuno/service-client";
 import { Button } from "antd";
 
-function CelestialBodyTable() {
+function StarTable() {
   const [dados, setDados] = useState([]);
   const [numeroPagina, setNumeroPagina] = useState(1);
   const nome = "";
 
   useEffect(() => {
     _service({
-      url: "/astros/list",
+      url: "/astros/star/list",
       method: "POST",
       data: { nome, numeroPagina },
       success: ({ json }) => {
@@ -30,7 +30,6 @@ function CelestialBodyTable() {
             <th>Nome</th>
             <th>Raio</th>
             <th>Rotação</th>
-            <th>Tipo</th>
           </tr>
         </thead>
         <tbody>
@@ -39,7 +38,6 @@ function CelestialBodyTable() {
               <td>{item.nome}</td>
               <td>{item.raio}</td>
               <td>{item.rotacao}</td>
-              <td>{item.tipo}</td>
             </tr>
           ))}
         </tbody>
@@ -62,4 +60,4 @@ function CelestialBodyTable() {
   );
 }
 
-export default CelestialBodyTable;
+export default StarTable;

@@ -30,12 +30,12 @@ function BaseFooter() {
               <address><Configuration parameter="footer-address" multilines/></address>
             </Col>
           </Row>
-          <Row>
+          <Row className="footer__phone">
             <Col>
               <p><PhoneOutlined /> <Configuration parameter="footer-phone"/></p>
             </Col>
           </Row>
-          <Row>
+          <Row className="footer__mail">
             <Col>
               <p><MailOutlined /> <Configuration parameter="footer-email"/></p>
             </Col>
