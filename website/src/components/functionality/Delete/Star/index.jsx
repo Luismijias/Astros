@@ -24,7 +24,7 @@ function DeleteStar() {
   return (
     <div className="delete-star">
       <h2>Deletar Estrela</h2>
-      <label>UID:</label>
+      <label>Colar UID aqui:</label>
       <Input
         value={uid} 
         onChange={(e) => setUid(e.target.value)} 

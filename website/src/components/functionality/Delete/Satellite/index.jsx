@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import _service from "@netuno/service-client";
-import { Button, Input, message } from "antd"; 
+import { Button, Select, message } from "antd"; 
 import "./index.less";
 
 function DeleteSatellite() {
   const [uid, setUid] = useState(""); 
+  const [dados, setDados] = useState([]);
+
+  useEffect(() => {
+    _service({
+      url: "/astros/satellite/id",
+      success: ({ json }) => {
+        setDados(json);
+      },
+      fail: (e) => {
+        console.log("Service Error", e);
+      },
+    });
+  }, []);
 
   const handleDeleteSatellite = () => {
     _service({
@@ -21,14 +34,23 @@ function DeleteSatellite() {
     });
   };
 
+  const handleSatelliteSelect = (selectedUid) => {
+    setUid(selectedUid);
+  };
+
   return (
     <div className="delete-satellite">
       <h2>Deletar Satélite</h2>
-      <label>UID:</label>
-      <Input
-        value={uid} 
-        onChange={(e) => setUid(e.target.value)} 
-      />
+      <Select
+        value={uid}
+        onChange={handleSatelliteSelect}
+      >
+        {dados.map((item) => (
+          <Select.Option key={item.uid} value={item.uid}>
+            {item.nome}
+          </Select.Option>
+        ))}
+      </Select>
       <Button type="primary" onClick={handleDeleteSatellite}>
         Deletar 
       </Button>

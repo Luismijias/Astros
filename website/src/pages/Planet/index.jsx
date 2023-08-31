@@ -12,6 +12,7 @@ function Planet() {
       <PlanetTable/>
       <CreatePlanet/>
       <DeletePlanet/>
+    
     </main>
   );
 };

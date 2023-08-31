@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import _service from "@netuno/service-client";
-import { Button, Input, message } from "antd"; 
+import { Button, Input, Select, message } from "antd"; 
+
 import "./index.less";
 
 function DeletePlanet() {
   const [uid, setUid] = useState(""); 
+  const [dados, setDados] = useState([]);
+
+  useEffect(() => {
+    _service({
+      url: "/astros/planet/id",
+      success: ({ json }) => {
+        setDados(json);
+      },
+      fail: (e) => {
+        console.log("Service Error", e);
+      },
+    });
+  }, []);
 
   const handleDeletePlanet = () => {
     _service({
@@ -21,14 +35,23 @@ function DeletePlanet() {
     });
   };
 
+  const handlePlanetSelect = (selectedUid) => {
+    setUid(selectedUid);
+  };
+
   return (
     <div className="delete-planet">
       <h2>Deletar Planeta</h2>
-      <label>UID:</label>
-      <Input
-        value={uid} 
-        onChange={(e) => setUid(e.target.value)} 
-      />
+      <Select
+        value={uid}
+        onChange={handlePlanetSelect}
+      >
+        {dados.map((item) => (
+          <Select.Option key={item.uid} value={item.uid}>
+            {item.nome}
+          </Select.Option>
+        ))}
+      </Select>
       <Button type="primary" onClick={handleDeletePlanet}>
         Deletar
       </Button>
@@ -36,4 +59,4 @@ function DeletePlanet() {
   );
 }
 
-export default DeletePlanet; 
+export default DeletePlanet;

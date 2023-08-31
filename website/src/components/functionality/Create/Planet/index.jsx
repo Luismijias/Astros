@@ -1,6 +1,7 @@
 import React, { useState , useEffect} from "react";
 import _service from "@netuno/service-client";
 import { Button, Input, Select, message } from "antd"; 
+
 import "./index.less";
 
 function CreatePlanet() {
@@ -72,7 +73,7 @@ function CreatePlanet() {
       </Select>
       <Button type="primary" onClick={handleCreatePlanet}>
         Criar
-      </Button>
+      </Button>    
     </div>
   );
 }
