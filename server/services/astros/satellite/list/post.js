@@ -1,7 +1,7 @@
 const nome = _req.getString('nome')
 const numeroPagina = _req.getInt('numeroPagina', 1)
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 5;
 const SELECT = 'uid, nome, rotacao, raio, tipo'
 const QUERY_PAGE = 
     `LIMIT ${PAGE_SIZE} 

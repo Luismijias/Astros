@@ -3,8 +3,6 @@ import SatelliteTable from '../../components/Tables/Satellite';
 import CreateSatellite from '../../components/functionality/Create/Satellite';
 
 import './index.less';
-import DeleteSatellite from '../../components/functionality/Delete/Satellite';
-
 
 function Satellite() {
   return (
@@ -12,7 +10,7 @@ function Satellite() {
       <h1>Pagina dos Satélites</h1>
     <SatelliteTable/>
     <CreateSatellite/>
-    <DeleteSatellite/>
+    {/* <DeleteSatellite/> */} 
 
     </main>
   );

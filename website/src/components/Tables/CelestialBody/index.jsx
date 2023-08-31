@@ -46,7 +46,7 @@ function CelestialBodyTable() {
       </table>
       <Button
         onClick={() => {
-          setNumeroPagina(numeroPagina - 1);
+          setNumeroPagina(1);
         }}
       >
         &lt;

@@ -1,9 +1,11 @@
 import React from 'react';
 import StarTable from '../../components/Tables/Star';
 import CreateStar from '../../components/functionality/Create/Star';
+import DeleteStar from '../../components/functionality/Delete/Star';
+import EditStar from '../../components/functionality/Edit/Star';
 
 import './index.less';
-import DeleteStar from '../../components/functionality/Delete/Star';
+
 
 function Star() {
   return (
@@ -12,6 +14,7 @@ function Star() {
       <StarTable/>
       <CreateStar/>
       <DeleteStar/>
+      <EditStar/>
     </main>
   );
 };

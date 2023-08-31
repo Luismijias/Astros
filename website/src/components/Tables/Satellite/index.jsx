@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./index.less";
 import _service from "@netuno/service-client";
-import { Button } from "antd";
+import { Button, message } from "antd";
 
 function SatelliteTable() {
   const [dados, setDados] = useState([]);
@@ -22,6 +22,22 @@ function SatelliteTable() {
     });
   }, [nome, numeroPagina]);
 
+  const handleDeleteSatellite = (uid) => {
+    _service({
+      url: "/astros/satellite/",
+      method: "DELETE",
+      data: { uid },
+      success: ({ json }) => {
+        message.success("Satélite apagado com sucesso!");
+        setDados(dados.filter(item => item.uid !== uid));
+      },
+      fail: (e) => {
+        console.log("Service Error", e);
+        message.error("Registro não encontrado.");
+      },
+    });
+  };
+
   return (
     <div className="celestial-body-table ">
       <table>
@@ -31,7 +47,8 @@ function SatelliteTable() {
             <th>Raio</th>
             <th>Rotação</th>
             <th>Planeta Mãe</th>
-            <th>UID</th>
+          
+            <th>Ação</th>
           </tr>
         </thead>
         <tbody>
@@ -41,14 +58,19 @@ function SatelliteTable() {
               <td>{item.raio}</td>
               <td>{item.rotacao}</td>
               <td>{item.planeta_mae}</td>
-              <td>{item.uid}</td>
+            
+              <td>
+                <Button onClick={() => handleDeleteSatellite(item.uid)}>
+                  Deletar
+                </Button>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
       <Button
         onClick={() => {
-          setNumeroPagina(numeroPagina - 1);
+          setNumeroPagina(1);
         }}
       >
         &lt;

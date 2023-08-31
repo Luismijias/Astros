@@ -2,6 +2,7 @@ import React from 'react';
 import PlanetTable from '../../components/Tables/Planet';
 import CreatePlanet from '../../components/functionality/Create/Planet';
 import DeletePlanet from '../../components/functionality/Delete/Planet';
+import EditPlanet from '../../components/functionality/Edit/Planet';
 
 import './index.less';
 
@@ -12,7 +13,7 @@ function Planet() {
       <PlanetTable/>
       <CreatePlanet/>
       <DeletePlanet/>
-    
+      <EditPlanet/>
     </main>
   );
 };
