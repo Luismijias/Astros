@@ -39,7 +39,7 @@ function SatelliteTable() {
   };
 
   return (
-    <div className="celestial-body-table ">
+    <div className="satellite-table ">
       <table>
         <thead>
           <tr>
@@ -69,6 +69,7 @@ function SatelliteTable() {
         </tbody>
       </table>
       <Button
+        className="next-button"
         onClick={() => {
           setNumeroPagina(1);
         }}
@@ -76,6 +77,7 @@ function SatelliteTable() {
         &lt;
       </Button>
       <Button
+        className="next-button"
         onClick={() => {
           setNumeroPagina(numeroPagina + 1);
         }}
