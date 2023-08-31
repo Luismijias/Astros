@@ -4,7 +4,7 @@ const dbStar = _db.queryFirst(
  )
 
 if (dbStar) {
-    _header.status(400)
+    _header.status(409)
     _out.json(
         _val.map()
             .set('erro', true)

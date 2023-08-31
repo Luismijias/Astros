@@ -1,8 +1,9 @@
 import React from 'react';
-
-import './index.less';
 import PlanetTable from '../../components/Tables/Planet';
 import CreatePlanet from '../../components/functionality/Create/Planet';
+import DeletePlanet from '../../components/functionality/Delete/Planet';
+
+import './index.less';
 
 function Planet() {
   return (
@@ -10,6 +11,7 @@ function Planet() {
       <h1>Planetas</h1>
       <PlanetTable/>
       <CreatePlanet/>
+      <DeletePlanet/>
     </main>
   );
 };

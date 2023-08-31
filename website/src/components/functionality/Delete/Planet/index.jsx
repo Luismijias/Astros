@@ -3,16 +3,16 @@ import _service from "@netuno/service-client";
 import { Button, Input, message } from "antd"; 
 import "./index.less";
 
-function DeleteStar() {
+function DeletePlanet() {
   const [uid, setUid] = useState(""); 
 
-  const handleDeleteStar = () => {
+  const handleDeletePlanet = () => {
     _service({
-      url: "/astros/star/", 
+      url: "/astros/planet/", 
       method: "DELETE", 
       data: { uid },
       success: ({ json }) => {
-        message.success("Estrela apagada com sucesso!");
+        message.success("Planeta apagado com sucesso!");
       },
       fail: (e) => {
         console.log("Service Error", e);
@@ -22,18 +22,18 @@ function DeleteStar() {
   };
 
   return (
-    <div className="delete-star">
-      <h2>Deletar Estrela</h2>
+    <div className="delete-planet">
+      <h2>Deletar Planeta</h2>
       <label>UID:</label>
       <Input
         value={uid} 
         onChange={(e) => setUid(e.target.value)} 
       />
-      <Button type="primary" onClick={handleDeleteStar}>
+      <Button type="primary" onClick={handleDeletePlanet}>
         Deletar
       </Button>
     </div>
   );
 }
 
-export default DeleteStar; 
+export default DeletePlanet; 

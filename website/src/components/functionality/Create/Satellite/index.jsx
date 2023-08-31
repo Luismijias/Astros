@@ -3,11 +3,11 @@ import _service from "@netuno/service-client";
 import { Button, Input, Select, message } from "antd"; 
 import "./index.less";
 
-function CreatePlanet() {
+function CreateSatellite() {
   const [nome, setNome] = useState("");
   const [raio, setRaio] = useState("");
   const [rotacao, setRotacao] = useState("");
-  const [estrela_mae, setEstrela_mae] = useState();
+  const [planeta_mae, setPlaneta_mae] = useState();
   const [dados, setDados] = useState([]);
 
   useEffect(() => {
@@ -22,28 +22,28 @@ function CreatePlanet() {
     });
   }, []);
 
-  const handleCreatePlanet = () => {
+  const handleCreateSatellite = () => {
     _service({
-      url: "/astros/planet/",
+      url: "/astros/satellite/",
       method: "POST",
-      data: { nome, raio, rotacao, estrela_mae },
+      data: { nome, raio, rotacao, planeta_mae },
       success: ({ json }) => {
-        message.success("Planeta criado com sucesso!"); 
+        message.success("Satélite criado com sucesso!"); 
         setNome("");
         setRaio("");
         setRotacao("");
-        setEstrela_mae();
+        setPlaneta_mae();
       },
       fail: (e) => {
         console.log("Service Error", e);
-        message.error("O planeta já existe.")
+        message.error("O satélite já existe.")
       },
     });
   };
 
   return (
-    <div className="create-planet">
-      <h2>Criar Novo Planeta</h2>
+    <div className="create-satellite">
+      <h2>Criar Novo Satellite</h2>
       <label>Nome:</label>
       <Input
         value={nome}
@@ -59,10 +59,10 @@ function CreatePlanet() {
         value={rotacao}
         onChange={(e) => setRotacao(e.target.value)}
       />
-      <label>Estrela Mãe:</label>
+      <label>Planeta Mãe:</label>
       <Select
-        value={estrela_mae}
-        onChange={(value) => setEstrela_mae(value)}
+        value={planeta_mae}
+        onChange={(value) => setSatellite_mae(value)}
       >
         {dados.map((item) => (
           <Select.Option key={item.id} value={item.id}>
@@ -70,11 +70,11 @@ function CreatePlanet() {
           </Select.Option>
         ))}
       </Select>
-      <Button type="primary" onClick={handleCreatePlanet}>
+      <Button type="primary" onClick={handleCreateSatellite}>
         Criar
       </Button>
     </div>
   );
 }
 
-export default CreatePlanet;
+export default CreateSatellite;

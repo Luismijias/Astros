@@ -1,5 +1,6 @@
-const dbPlanet = _db.queryFirst('SELECT * FROM planet WHERE lower(name) = lower(?)' ,
- _req.getString('name')
+const dbPlanet = _db.queryFirst(
+  'SELECT * FROM planet WHERE lower(name) = lower(?)' ,
+ _req.getString('nome')
  )
 
 if (dbPlanet) {
@@ -15,7 +16,7 @@ if (dbPlanet) {
 const nome = _req.getString('nome')
 const raio = _req.getString('raio')
 const rotacao = _req.getString('rotacao')
-const estrela_mae = _req.getString('estrela_mae')
+const estrela_mae = _req.getInt('estrela_mae')
 
 
 _db.insert(

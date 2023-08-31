@@ -20,6 +20,7 @@ function CreateStar() {
       },
       fail: (e) => {
         console.log("Service Error", e);
+        message.error("A estrela já existe.")
       },
     });
   };
@@ -43,7 +44,7 @@ function CreateStar() {
         onChange={(e) => setRotacao(e.target.value)}
       />
       <Button type="primary" onClick={handleCreateStar}>
-        Criar Estrela
+        Criar
       </Button>
     </div>
   );
