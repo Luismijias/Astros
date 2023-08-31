@@ -1,12 +1,13 @@
 import React, { useState , useEffect} from "react";
 import _service from "@netuno/service-client";
-import { Button, Input, message } from "antd"; 
+import { Button, Input, Select, message } from "antd"; 
 import "./index.less";
 
 function CreatePlanet() {
   const [nome, setNome] = useState("");
   const [raio, setRaio] = useState("");
   const [rotacao, setRotacao] = useState("");
+  const [estrela_mae, setEstrela_mae] = useState("");
   const [dados, setDados] = useState([]);
 
   useEffect(() => {
@@ -21,24 +22,23 @@ function CreatePlanet() {
     });
   }, []);
 
-  const handleCreateStar = () => {
+  const handleCreatePlanet = () => {
     _service({
       url: "/astros/planet/",
       method: "POST",
-      data: { nome, raio, rotacao },
+      data: { nome, raio, rotacao, estrela_mae },
       success: ({ json }) => {
         message.success("Planeta criado com sucesso!"); 
         setNome("");
         setRaio("");
         setRotacao("");
+        setEstrela_mae("");
       },
       fail: (e) => {
         console.log("Service Error", e);
       },
     });
   };
-
-
 
   return (
     <div className="create-planet">
@@ -58,10 +58,20 @@ function CreatePlanet() {
         value={rotacao}
         onChange={(e) => setRotacao(e.target.value)}
       />
-      <Button type="primary" onClick={handleCreateStar}>
+      <label>Estrela Mãe:</label>
+      <Select
+        value={estrela_mae}
+        onChange={(value) => setEstrela_mae(value)}
+      >
+        {dados.map((item) => (
+          <Select.Option key={item.id} value={item.id}>
+            {item.nome}
+          </Select.Option>
+        ))}
+      </Select>
+      <Button type="primary" onClick={handleCreatePlanet}>
         Criar Planeta
       </Button>
-      {JSON.stringify(dados)}
     </div>
   );
 }

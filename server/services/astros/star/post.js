@@ -1,20 +1,20 @@
 const dbStar = _db.queryFirst('SELECT * FROM star WHERE lower(name) = lower(?)' ,
  _req.getString('name')
- );
+ )
 
-if (!dbStar) {
-    _header.status(409);
+if (dbStar) {
+    _header.status(409)
     _out.json(
         _val.map()
             .set('erro', true)
             .set('mensagem', 'registro-ja-existe')
-    );
-    _exec.stop();
+    )
+    _exec.stop()
 }
 
-const nome = _req.getString('nome');
-const raio = parseFloat(_req.getString('raio'));
-const rotacao = parseInt(_req.getString('rotacao'));
+const nome = _req.getString('nome')
+const raio = _req.getString('raio')
+const rotacao = _req.getString('rotacao')
 
 _db.insert(
     'star',
@@ -27,6 +27,6 @@ _db.insert(
 _out.json(
     _val.map()
         .set("resultado", true)
-);
+)
 
 
