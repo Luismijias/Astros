@@ -42,8 +42,8 @@
       "website": {
         "mapbox": {"dark": false},
         "name": "Website Name",
-        "services": {"api": "http://luis-mijias.dev.netuno.org:21290/services/"},
-        "url": "http://luis-mijias.dev.netuno.org:21230"
+        "services": {"api": "http://localhost:9000/services/"},
+        "url": "http://localhost:3000"
       }
     },
     "public": {}

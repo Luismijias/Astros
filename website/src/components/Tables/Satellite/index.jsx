@@ -3,7 +3,7 @@ import "./index.less";
 import _service from "@netuno/service-client";
 import { Button, message } from "antd";
 
-function SatelliteTable() {
+function RelationshipTable() {
   const [dados, setDados] = useState([]);
   const [numeroPagina, setNumeroPagina] = useState(1);
   const nome = "";
@@ -37,7 +37,7 @@ function SatelliteTable() {
       },
     });
   };
-
+  
   return (
     <div className="satellite-table ">
       <table>
@@ -58,7 +58,6 @@ function SatelliteTable() {
               <td>{item.raio}</td>
               <td>{item.rotacao}</td>
               <td>{item.planeta_mae}</td>
-            
               <td>
                 <Button onClick={() => handleDeleteSatellite(item.uid)}>
                   Deletar
@@ -88,4 +87,4 @@ function SatelliteTable() {
   );
 }
 
-export default SatelliteTable;
+export default RelationshipTable;

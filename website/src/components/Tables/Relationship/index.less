@@ -1,0 +1,78 @@
+@import "../../../styles/variables.less";
+
+.relationship-table {
+  margin-top: 40px;  
+  padding: 20px;
+  background-color: @primary-color;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: black;
+
+  // &__star {
+  //   display: none;
+  // }
+
+  // &__planets {
+  //   display: none;
+  // }
+
+  // &__satellite {
+  //   display: none;
+  // }
+
+  p {
+    color: @secondary-color;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid @secondary-color;
+    box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      color: black;
+      font-size: 1.2em;
+    }
+
+    th {
+      background-color: @secondary-color;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: darken(@secondary-color, 10%);
+      box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    tr:nth-child(odd) {
+      background-color: @primary-color;
+    }
+  }
+
+  h4 {
+    margin: 5px 0;
+    color: @secondary-color;
+    box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .next-button {
+    margin: 40px 10vw 0px  10vw;
+  }
+  
+  .ant-btn {
+    background-color: #b1aeae;
+    border-radius: 10px;
+    
+    box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
+    
+  }
+}

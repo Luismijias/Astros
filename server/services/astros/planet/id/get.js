@@ -1,7 +1,7 @@
 const dbCelestial = _db.query(`
-SELECT uid, nome, id, 
+SELECT uid, star_id, nome, id, 
     FROM (
-        SELECT uid, name AS nome, radius AS raio, rotation AS rotacao, id, 'planet' AS tipo
+        SELECT uid, star_id, name AS nome, radius AS raio, rotation AS rotacao, id, 'planet' AS tipo
             FROM planet  
 ) AS Planet`);
 

@@ -21,6 +21,7 @@ import Star from './pages/Star';
 import Detail from './pages/Detail';
 
 import './styles/App.less';
+import Relationship from './pages/Relationship';
 
 
 
@@ -84,6 +85,7 @@ function App() {
                 <Route path="/pt/star/" exact element={<Star />} />
                 <Route path="/pt/planet/" exact element={<Planet />} />
                 <Route path="/pt/satellite/" exact element={<Satellite />} />
+                <Route path="/pt/relationship/" exact element={<Relationship/>} />
                 {routes}
                 <Route element={<NotFound />} />
               </Routes>
